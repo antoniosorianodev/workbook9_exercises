@@ -11,5 +11,21 @@ class Person {
     }
 }
 
-let testPerson = new Person("fName", "lName");
+class Employee extends Person {
+    constructor(firstName, lastName, id, jobTitle, payRate) {
+        super(firstName, lastName);
+
+        this.id = id;
+        this.jobTitle = jobTitle;
+        this.payRate = payRate;
+    }
+}
+
+const testPerson = new Person("fName", "lName");
 console.log(testPerson.getFullName());
+
+const employee1 = new Employee("Michael", "Scott", 1, "Manager", 100);
+const employee2 = new Employee("Kevin", "Malone", 2, "Accountant", 11);
+
+console.log(employee1.getFullName());
+console.log(employee2.getFullName());
